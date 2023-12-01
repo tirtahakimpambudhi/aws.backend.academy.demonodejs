@@ -1,0 +1,44 @@
+{
+  "name": "backend-class.basic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "process": "node src/index.js --run=basic:process --func=getUsage --display=true\n",
+    "fs:read": "node src/index.js --run=basic:filesystem --func=readFileAsync --args=\"./src/basic/process.js\" --display=true --promise=true\n",
+    "fs:write": "node src/index.js --run=basic:filesystem --func=writeFileAsync --args=\"./data/output.txt\",Hello-World --display=true --promise=true\n",
+    "fs:readStream": "node src/index.js --run=basic:filesystem --func=readFileStream --args=\"./src/basic/process.js\" --display=true --promise=true\n",
+    "fs:writeStream": "node src/index.js --run=basic:filesystem --func=writeFileStream --args=\"./data/output.txt\",\"Hello-World\" --display=true --promise=true\n",
+    "http:stdlib": "node src/index.js --run=http:http --func=run --args=\"localhost\",3000 --display=false --promise=false",
+    "http:happi": "node src/index.js --run=http:http --func=run --args=\"localhost\",3000 --display=false --promise=true",
+    "test": "mocha tests/{basic,core,db,model}/*",
+    "format": "prettier --write \"{src,tests}/**/*.{js,ts}\"",
+    "lint": "eslint src/* --ignore-pattern 'src/index.js' --ignore-pattern 'src/http/http.js' --no-warn-ignored",
+    "lint:fix": "eslint src/*/hapi.js --fix",
+    "scan": "osv-scanner --lockfile package-lock.json",
+    "test:coverage": "nyc mocha tests/*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "eslint": "^9.16.0",
+    "eslint-config-dicodingacademy": "^0.9.4",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.13.0",
+    "mocha": "^10.7.3",
+    "nyc": "^17.1.0",
+    "prettier": "^3.4.2",
+    "sinon": "^19.0.2"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@hapi/hapi": "^21.3.12",
+    "chai": "^5.1.2",
+    "got": "^11.8.6",
+    "joi": "^17.13.3",
+    "uuid": "^11.0.3"
+  }
+}
