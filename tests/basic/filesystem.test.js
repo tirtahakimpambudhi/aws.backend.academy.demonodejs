@@ -48,7 +48,7 @@ describe('Test Filesystem Module', () => {
       });
       it('Should failure read the file because not filename', async () => {
         try {
-          await readFileAsync(import.meta.dirname);
+          await readFileAsync(process.cwd());
           expect.fail();
         } catch (error) {
           expect(error.message).to.not.empty;
@@ -82,7 +82,7 @@ describe('Test Filesystem Module', () => {
       });
 
       it('Should successfully write the file not exist', async () => {
-        const filepath = `${import.meta.dirname}/testing-write-file.txt`;
+        const filepath = `${process.cwd()}/testing-write-file.txt`;
         await writeFileAsync(filepath, 'Hello World');
         const result = await readFileAsync(filepath);
         expect(result).to.eq('Hello World');
@@ -90,7 +90,7 @@ describe('Test Filesystem Module', () => {
       });
 
       it('Should successfully write the file with arg number', async () => {
-        const filepath = `${import.meta.dirname}/testing-write-file.txt`;
+        const filepath = `${process.cwd()}/testing-write-file.txt`;
         await writeFileAsync(filepath, 123);
         const result = await readFileAsync(filepath);
         expect(parseInt(result)).to.eq(123);
@@ -99,7 +99,7 @@ describe('Test Filesystem Module', () => {
 
       // Test case to check if the file is write failure
       it('Should failure write the file with directory not exist', async () => {
-        const filepath = `${import.meta.dirname}/directoryNotExist/testing-write-file.txt`;
+        const filepath = `${process.cwd()}/directoryNotExist/testing-write-file.txt`;
         try {
           await writeFileAsync(filepath, 'testing-not-exist-directory');
           expect.fail();
@@ -135,7 +135,7 @@ describe('Test Filesystem Module', () => {
       });
       it('Should failure read stream the file because not filename', async () => {
         try {
-          await readFileStream(import.meta.dirname);
+          await readFileStream(process.cwd());
           expect.fail();
         } catch (error) {
           // Check that the error message exists and is not empty
@@ -171,7 +171,7 @@ describe('Test Filesystem Module', () => {
       });
 
       it('Should successfully write stream the file not exist', async () => {
-        const filepath = `${import.meta.dirname}/testing-write-file.txt`;
+        const filepath = `${process.cwd()}/testing-write-file.txt`;
         await writeFileStream(filepath, 'Hello World');
         const result = await readFileStream(filepath);
         expect(result).to.eq('Hello World');
@@ -179,7 +179,7 @@ describe('Test Filesystem Module', () => {
       });
 
       it('Should successfully write stream the file with arg number', async () => {
-        const filepath = `${import.meta.dirname}/testing-write-file.txt`;
+        const filepath = `${process.cwd()}/testing-write-file.txt`;
         await writeFileAsync(filepath, 123);
         const result = await readFileAsync(filepath);
         expect(parseInt(result)).to.eq(123);
@@ -188,7 +188,7 @@ describe('Test Filesystem Module', () => {
 
       // Test case to check if the file is write failure
       it('Should failure write stream the file with directory not exist', async () => {
-        const filepath = `${import.meta.dirname}/directoryNotExist/testing-write-file.txt`;
+        const filepath = `${process.cwd()}/directoryNotExist/testing-write-file.txt`;
         try {
           await writeFileStream(filepath, 'testing-not-exist-directory');
           expect.fail();
@@ -225,7 +225,7 @@ describe('Test Filesystem Module', () => {
       });
       it('Should failure copy stream the file because not filename', async () => {
         try {
-          await copyFileStream(import.meta.dirname);
+          await copyFileStream(process.cwd());
           expect.fail();
         } catch (error) {
           // Check that the error message exists and is not empty
