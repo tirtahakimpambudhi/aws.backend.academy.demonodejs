@@ -2,3 +2,4 @@ node_modules/
 script/
 .git/
 .idea/
+.nyc_output/
