@@ -1,9 +1,7 @@
-Here’s the updated README.md in English:
-
 ```markdown
 # AWS Backend Academy - Demo Node.js
 
-This repository contains the source code for **AWS Backend Academy** using **Node.js**. The project serves as a demo backend application built with Node.js, designed to integrate seamlessly with AWS services.
+This repository contains the source code from Course **Dicoding AWS Backend Academy** using **Node.js**. The project serves as a demo backend application built with Node.js, designed to integrate seamlessly with AWS services.
 
 ---
 
