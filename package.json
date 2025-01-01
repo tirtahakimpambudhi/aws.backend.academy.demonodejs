@@ -19,9 +19,9 @@
     "test:coverage": "nyc mocha tests/*"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tirta Hakim Pambudhi",
   "license": "ISC",
-  "description": "",
+  "description": "This demo NodeJS from AWS Backend Academy",
   "devDependencies": {
     "@eslint/js": "^9.16.0",
     "eslint": "^9.16.0",
