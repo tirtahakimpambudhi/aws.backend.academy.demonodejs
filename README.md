@@ -88,7 +88,7 @@ Contributions are welcome! Feel free to fork this repository, create a new branc
 
 ## License
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the **APACHE 2.0 License**. See the [LICENSE](LICENSE.md) file for details.
 
 ---
 
